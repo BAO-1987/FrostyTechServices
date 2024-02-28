@@ -2,17 +2,14 @@
 @use "../../utils/mixins/" as *;
 
 .about {
-  padding-left: clamp(16px, vw(64), 64px);
-
   &__inner {
     @include flex-sb;
-
     gap: 24px;
   }
 
   &__content {
     border-radius: var(--radius-big);
-    padding: 64px;
+    padding: clamp(20px, vw(64), 64px);
     width: 100%;
     max-width: 764px;
     background-color: var(--color-gray-100);
@@ -29,7 +26,7 @@
   }
 
   h2 {
-    margin-bottom: 2.4rem;
+    margin-bottom: 24px;
   }
 
   p {
