@@ -1,0 +1,85 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.service {
+  padding-top: clamp(16px, vw(80), 80px);
+
+  h2 {
+    margin: 0 auto 2rem;
+  }
+
+  &__desk {
+    min-height: clamp(190px, vw(220), 220px);
+    background-position: right;
+    background-size: clamp(300px, vw(430), 430px) 260px;
+
+    @include media(tablet) {
+      min-height: 250px;
+      background-size: contain;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-big);
+    height: 100%;
+    min-height: 520px;
+
+    @include media(mobile-l) {
+      min-height: 400px;
+    }
+
+    &:last-child {
+      @include media(tablet) {
+        grid-column: 2 span;
+        margin: 0 auto;
+        max-width: 450px;
+      }
+
+      @include media(mobile-l) {
+        grid-column: auto;
+        margin: 0;
+        max-width: fit-content;
+      }
+    }
+
+    h3 {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    img {
+      border-radius: var(--radius-big);
+      width: 100%;
+      min-height: 228px;
+    }
+  }
+
+  &__content {
+    border-radius: var(--radius-big);
+    padding: clamp(16px, vw(40), 40px);
+    height: 100%;
+    background-color: var(--color-gray-100);
+    transform: translateY(-8%);
+
+    @include media(mobile-l) {
+      height: auto;
+    }
+  }
+}

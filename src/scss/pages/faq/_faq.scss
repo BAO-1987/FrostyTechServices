@@ -1,0 +1,79 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.faq {
+  p {
+    line-height: 1.5;
+  }
+
+  &__item {
+    border-radius: calc(var(--radius-main) * 2);
+    background-color: var(--color-white);
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  details {
+    overflow: hidden;
+    border-radius: calc(var(--radius-main) * 2);
+
+    p {
+      max-width: 940px;
+    }
+
+    &[open] {
+      summary::after {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px clamp(20px, vw(40), 40px) 20px clamp(20px, vw(40), 40px);
+    font-weight: var(--fw-700);
+    font-size: clamp(18px, 1.1017rem + 0.7486vi, 32px);
+    line-height: 1.31;
+    cursor: pointer;
+    gap: 20px;
+
+    &::after {
+      @include mask;
+
+      position: relative;
+      right: clamp(1px, vw(25), 25px);
+      display: block;
+      mask-image: url("../images/icons/arrow-down.svg");
+      min-width: 32px;
+      min-height: 32px;
+      background-color: var(--color-gray-800);
+      transition: transform 0.2s linear;
+    }
+
+    + div {
+      padding: 0 clamp(20px, vw(40), 40px) 24px;
+    }
+  }
+
+  h1 {
+    margin: 0 auto 2rem;
+
+    + p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include media(mobile-l) {
+    summary {
+      line-height: 1.2;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

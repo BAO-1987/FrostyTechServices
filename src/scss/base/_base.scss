@@ -1,0 +1,151 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
+
+html,
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+.page {
+  height: var(--vh);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-400);
+  font-style: normal;
+  font-size: clamp(16px, 15.2px + 0.25vi, 20px);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-blue-800);
+  background-color: var(--color-white);
+  font-optical-sizing: auto;
+
+  &__body {
+    min-width: 320px;
+    min-height: var(--vh);
+  }
+
+  &.open {
+    overflow: hidden;
+  }
+}
+
+// section {
+//   margin-bottom: 32px;
+// }
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
+  min-height: var(--vh);
+}
+
+.main {
+  padding-top: calc(var(--header-height) + 4px);
+}
+
+// .section {
+//   padding: clamp(50px, vw(100), 100px) 0;
+// }
+
+.background {
+  padding: clamp(20px, vw(64), 64px);
+  border-radius: var(--radius-big);
+  background-color: var(--color-gray-100);
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: var(--radius-big);
+  min-height: 200px;
+  padding: clamp(16px, vw(40), 40px);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-gray-100);
+
+  p {
+    width: 100%;
+    max-width: 765px;
+
+    @include media(tablet) {
+      position: relative;
+      z-index: 2;
+      color: var(--color-white);
+    }
+  }
+
+  @include media(tablet) {
+    background-size: contain;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--color-black);
+      opacity: 0.4;
+      inset: 0;
+    }
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 312px;
+}
+
+#form-request {
+  position: fixed;
+  z-index: 10;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.2s;
+  inset: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-black);
+    opacity: 0.3;
+    inset: 0;
+  }
+
+  iframe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: 30px auto;
+    border: none;
+    width: 90%;
+    height: calc(var(--vh) - 60px);
+    max-width: 980px;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-big);
+  padding: clamp(16px, vw(40), 40px);
+  line-height: 1.5;
+  background-color: var(--color-white);
+  gap: 16px;
+}

@@ -1,0 +1,43 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.blog {
+  h2 {
+    margin: 0 auto 24px;
+
+    + p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-rows: minmax(min-content, auto);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem 20px;
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(mobile-m) {
+      grid-auto-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      @include media(tablet) {
+        grid-column: 2 span;
+        margin: 0 auto;
+        max-width: 400px;
+      }
+
+      @include media(mobile-m) {
+        grid-column: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}

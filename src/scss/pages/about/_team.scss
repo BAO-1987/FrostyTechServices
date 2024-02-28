@@ -1,0 +1,102 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.team {
+  &__list {
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 2rem clamp(20px, vw(38), 38px);
+    height: auto;
+    background-color: var(--color-gray-100);
+
+    img {
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    h3 {
+      margin: 0 auto 5px;
+      line-height: 1;
+      color: var(--color-orange-400);
+    }
+
+    span {
+      font-weight: var(--fw-500);
+      font-size: clamp(16px, 1.05rem + 0.375vi, 24px);
+      line-height: 1.33;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  &__name {
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 16px;
+  }
+
+  h2 {
+    margin: 0 auto 2rem;
+  }
+
+  .btn {
+    padding: 12px 14px;
+    width: 40px;
+    min-width: auto;
+
+    &::after {
+      right: 0;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    &--prev {
+      scale: -1 1;
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      align-items: flex-start;
+
+      img {
+        overflow: hidden;
+        height: max-content;
+        max-width: 90px;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__item {
+      padding: 24px;
+    }
+  }
+}
+
+.team-slider {
+  overflow: hidden;
+}
