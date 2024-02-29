@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-      width: 100%;
+    width: 100%;
 
     @include media(tablet) {
       position: fixed;
@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: auto;
-      padding-top: calc(var(--header-height));
+      padding-top: calc(var(--header-height) * 1.5);
       width: 100%;
       height: calc(var(--vh));
       background-color: var(--color-white);
@@ -34,7 +34,7 @@
   &__list {
     display: flex;
     align-items: center;
-    margin-right: 48px;
+    margin-right: clamp(16px, vw(48), 48px);
 
     @include media(tablet) {
       z-index: -1;
@@ -59,14 +59,13 @@
   &__link {
     @include flex-all-center;
 
-    position: relative;
-    font-weight: var(--fw-500);
+    white-space: nowrap;
     font-size: 16px;
-    line-height: 1;
+    line-height: 1.2;
     transition: color 0.3s linear;
 
     &:hover {
-      color: var(--color-orange);
+      color: var(--color-blue-400);
     }
 
     &.true {
@@ -86,12 +85,6 @@
     @include media(tablet) {
       margin: 0 auto 20px !important;
       border-color: var(--color-gray-900) !important;
-    }
-  }
-
-  @include media(mobile-l) {
-    .logo {
-      max-width: 78px;
     }
   }
 }

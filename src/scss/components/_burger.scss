@@ -8,10 +8,10 @@
   --move: calc(var(--burger-size) / 3);
   --move-decrement: calc(var(--move) * -1);
   --transition-time: 0.5s;
-  --lines-color: var(--color-gray-900);
+  --lines-color: var(--color-blue-900);
 
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 50%;
   display: none;
   width: calc(var(--burger-size) + 5px);

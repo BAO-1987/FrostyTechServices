@@ -2,20 +2,19 @@
 @use "../utils/mixins/" as *;
 
 .hero {
-
   * {
-    z-index: 1;
     position: relative;
+    z-index: 1;
   }
 
   &__inner {
     position: relative;
     display: flex;
-    padding: 0 16px 0 clamp(16px, vw(64), 64px);
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     border-radius: var(--radius-big);
+    padding: 0 16px 0 clamp(16px, vw(64), 64px);
     min-height: 646px;
     background-position: right;
     background-size: contain;
@@ -25,9 +24,17 @@
       content: "";
       position: absolute;
       z-index: 1;
-      inset: 0;
+      width: 60%;
       background: var(--gradient);
-      width: 50%;
+      inset: 0;
+    }
+
+    @include media(tablet-wide) {
+      background-size: cover;
+    }
+
+    @include media(mobile-m) {
+      padding: 20px;
     }
   }
 
@@ -40,30 +47,34 @@
     margin-bottom: 1.6rem;
     width: 100%;
     max-width: 630px;
-    opacity: 0.8;
+    color: var(--color-blue-800);
+
+    @include media(tablet) {
+      max-width: 100%;
+    }
   }
 
   @include media(tablet) {
-    padding: 0;
-
     &__inner {
       min-height: 442px;
     }
   }
 
   @include media(mobile-m) {
-    margin: 0 -16px;
-
-    &__inner {
-      border-radius: 0;
-    }
-
     .btn {
       max-width: none;
     }
 
     br {
       display: none;
+    }
+  }
+
+  &--about,
+  &--services {
+    p {
+      margin-bottom: 0;
+      max-width: 567px;
     }
   }
 }

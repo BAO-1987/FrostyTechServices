@@ -1,0 +1,52 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.choose {
+  &__list {
+    margin-bottom: 2.4rem;
+    counter-reset: li;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    gap: 24px;
+
+    @include media(tablet-wide) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    counter-increment: li;
+    display: flex;
+    flex-direction: column;
+    height: 324px;
+    padding: clamp(16px, vw(24), 24px);
+    border-radius: var(--radius-big);
+    background-color: var(--color-white);
+
+    &::before {
+      position: absolute;
+      right: 24px;
+      content: counter(li, decimal-leading-zero);
+      font-weight: var(--fw-700);
+      font-size: 48px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin-top: auto;
+      min-height: 58px;
+      font-weight: var(--fw-600);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+}

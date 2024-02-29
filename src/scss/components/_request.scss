@@ -2,35 +2,67 @@
 @use "../utils/mixins/" as *;
 
 .request {
-  padding-top: clamp(50px, vw(80), 80px);
+  margin-bottom: 24px;
+  border-radius: var(--radius-big);
+  padding: clamp(16px, vw(64), 64px);
+  background-color: var(--color-blue-900);
 
-  &__link {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: clamp(26px, 1.55rem + 0.375vi, 32px);
-    line-height: 1;
-    text-decoration: underline 2px solid;
-    transition: text-decoration-color 0.4s linear;
-    text-underline-offset: 5px;
+  h2 {
+    margin-bottom: 0;
+    font-size: clamp(36px, 2rem + 1vi, 56px);
+    color: var(--color-white);
 
-    &:hover {
-      text-decoration-color: transparent;
+    @include media(tablet) {
+      margin-bottom: 1rem;
     }
   }
 
-  h2 {
-    margin: 0 auto 2rem;
-    font-weight: var(--fw-600);
-    font-size: clamp(28px, 2rem + 1vi, 40px);
-    text-align: center;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, vw(48), 48px);
+
+    @include media(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    border-radius: var(--radius-big);
+    padding: clamp(16px, vw(32), 32px);
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 40px 0 rgba(43, 89, 255, 0.08);
+    background-color: var(--color-blue-800);
+
+    label {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    textarea,
+    input {
+      margin-right: 8px;
+      border-radius: 24px;
+      padding: 16px;
+      width: 100%;
+      height: 66px;
+      font-size: 16px;
+      line-height: 1;
+      background-color: var(--color-gray-100);
+    }
+
+    textarea {
+      height: 156px;
+      resize: none;
+    }
   }
 
   .btn {
-    margin: 0 auto;
-
-    @include media(mobile-m) {
-      max-width: none;
-    }
+    margin-top: 20px;
   }
 }

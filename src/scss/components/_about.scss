@@ -1,0 +1,45 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.about {
+  &__inner {
+    @include flex-sb;
+
+    gap: 24px;
+
+    @include media(mobile-l) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: var(--radius-big);
+    padding: clamp(20px, vw(64), 64px);
+    width: 100%;
+    max-width: 764px;
+    background-color: var(--color-gray-100);
+  }
+
+  &__image {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--home {
+    p {
+      margin-bottom: clamp(16px, vw(48), 48px);
+    }
+  }
+
+  h2 {
+    margin-bottom: 24px;
+  }
+}

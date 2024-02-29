@@ -1,33 +1,19 @@
 @use "../../utils/functions/" as *;
 @use "../../utils/mixins/" as *;
 
-.service {
-  &__inner {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: var(--radius-big);
-    padding: 0 24px;
-    width: 100%;
-    max-width: 596px;
-    background-color: var(--color-white);
-
-    h2 {
-      margin-bottom: 24px;
-    }
-  }
-
+.core {
   &__list {
     display: grid;
-    grid-auto-rows: minmax(min-content, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -50,27 +36,27 @@
       background-repeat: no-repeat;
     }
 
-    &--optimal {
-      &::before {
-        background-image: url("../images/icons/efficiency.svg");
-      }
-    }
-
-    &--longevity {
-      &::before {
-        background-image: url("../images/icons/logevity.svg");
-      }
-    }
-
-    &--solution {
-      &::before {
-        background-image: url("../images/icons/pers.svg");
-      }
-    }
-
-    &--mind {
+    &--customer {
       &::before {
         background-image: url("../images/icons/heart.svg");
+      }
+    }
+
+    &--quality {
+      &::before {
+        background-image: url("../images/icons/check.svg");
+      }
+    }
+
+    &--excelence {
+      &::before {
+        background-image: url("../images/icons/star.svg");
+      }
+    }
+
+    &--integrity {
+      &::before {
+        background-image: url("../images/icons/circle-check.svg");
       }
     }
 
@@ -79,9 +65,14 @@
     }
 
     p {
-      margin-bottom: 7px;
       font-size: 16px;
       line-height: 1.2;
     }
+  }
+}
+
+@include media(mobile-l) {
+  br {
+    display: none;
   }
 }
