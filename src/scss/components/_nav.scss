@@ -39,6 +39,7 @@
     @include media(tablet) {
       z-index: -1;
       flex-direction: column;
+      margin-right: 0;
     }
   }
 

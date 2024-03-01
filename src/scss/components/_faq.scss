@@ -1,0 +1,74 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.faq {
+  &__list {
+    margin-bottom: 2.4rem;
+  }
+
+  &__item {
+    border-radius: (var(--radius-big));
+    background-color: var(--color-white);
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  details {
+    overflow: hidden;
+    border-radius: (var(--radius-big));
+
+    p {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    &[open] {
+      summary {
+        &::after {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(16px, vw(24), 24px);
+    font-weight: var(--fw-600);
+    font-size: clamp(18px, 1.05rem + 0.375vi, 24px);
+    line-height: 1.2;
+    cursor: pointer;
+    gap: 16px;
+
+    &::after {
+      @include mask;
+
+      position: relative;
+      display: block;
+      mask-image: url("../images/icons/arrow-down.svg");
+      min-width: 32px;
+      min-height: 32px;
+      background-color: var(--color-blue-800);
+      transform: scaleY(-1);
+      transition: transform 0.3s linear;
+    }
+
+    + div {
+      padding: 0 clamp(16px, vw(80), 80px) clamp(16px, vw(24), 24px) clamp(16px, vw(24), 24px);
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 2.4rem;
+    font-size: clamp(32px, 1.8rem + 1vi, 48px);
+    line-height: 1.2;
+  }
+}

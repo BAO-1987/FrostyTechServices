@@ -40,13 +40,14 @@
 
   h1 {
     margin-bottom: 24px;
+    font-size: clamp(32px, 2rem + 1vi, 56px);
     line-height: 1.22;
   }
 
   p {
     margin-bottom: 1.6rem;
     width: 100%;
-    max-width: 630px;
+    max-width: 627px;
     color: var(--color-blue-800);
 
     @include media(tablet) {

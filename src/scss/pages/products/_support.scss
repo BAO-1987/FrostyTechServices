@@ -1,0 +1,15 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.support {
+  &__inner {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+  }
+
+  &__list {
+    
+  }
+}

@@ -2,6 +2,8 @@
 @use "../utils/mixins/" as *;
 
 .about {
+  $root: &;
+
   &__inner {
     @include flex-sb;
 
@@ -36,6 +38,22 @@
   &--home {
     p {
       margin-bottom: clamp(16px, vw(48), 48px);
+    }
+  }
+
+  &--services {
+    #{$root}__content {
+      max-width: 596px;
+      padding: clamp(16px, vw(24), 24px);
+      background-color: var(--color-white);
+
+      @include media(mobile-l) {
+        max-width: 100%;
+      }
+    }
+
+    #{$root}__inner {
+      margin-bottom: clamp(30px, vw(88), 88px);
     }
   }
 

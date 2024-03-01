@@ -5,7 +5,12 @@
   &__inner {
     display: grid;
     grid-template-columns: auto 1fr;
+    margin-bottom: clamp(30px, vw(88), 88px);
     gap: 24px;
+
+    @include media(tablet-wide) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__content {
@@ -18,6 +23,11 @@
     max-width: 596px;
     background-color: var(--color-white);
 
+    @include media(tablet-wide) {
+      padding: 16px;
+      max-width: 100%;
+    }
+
     h2 {
       margin-bottom: 24px;
     }
@@ -28,6 +38,10 @@
     grid-auto-rows: minmax(min-content, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -41,7 +55,7 @@
       content: "";
       position: relative;
       align-self: flex-end;
-      margin-bottom: 32px;
+      margin-bottom: clamp(16px, vw(32), 32px);
       width: 64px;
       height: 64px;
       background-image: url("../images/icons/heart.svg");
