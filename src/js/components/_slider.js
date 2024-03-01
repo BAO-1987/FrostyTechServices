@@ -1,23 +1,19 @@
-import Swiper, { Navigation, Pagination, EffectFade, Scrollbar } from 'swiper';
+import Swiper, {
+  Navigation,
+  Pagination,
+} from 'swiper';
 
-const swiperTeam = new Swiper('.team-slider', {
+const swiperTeam = new Swiper('.product__slider', {
   slidesPerView: 1,
   spaceBetween: 20,
   modules: [Navigation, Pagination],
-
-
   draggable: true,
   grabCursor: true,
   navigation: {
-    nextEl: '.team .btn--next',
-    prevEl: '.team .btn--prev',
+    nextEl: '.product .btn--next',
+    prevEl: '.product .btn--prev',
   },
-  breakpoints: {
-    992: {
-      slidesPerView: 3,
-    },
-    650: {
-      slidesPerView: 2,
-    },
+  pagination: {
+    el: '.swiper-pagination',
   },
 });

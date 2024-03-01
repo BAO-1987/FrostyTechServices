@@ -38,11 +38,11 @@
     }
   }
 
-  h1 {
-    margin-bottom: 24px;
-    font-size: clamp(32px, 2rem + 1vi, 56px);
-    line-height: 1.22;
-  }
+  // h1 {
+  //   margin-bottom: 24px;
+  //   font-size: clamp(32px, 2rem + 1vi, 56px);
+  //   line-height: 1.22;
+  // }
 
   p {
     margin-bottom: 1.6rem;
@@ -76,6 +76,11 @@
     p {
       margin-bottom: 0;
       max-width: 567px;
+    }
+  }
+  &--product {
+    p {
+      margin-bottom: 0;
     }
   }
 }

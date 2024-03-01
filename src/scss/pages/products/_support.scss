@@ -6,10 +6,36 @@
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr;
-    gap: 24px;
+    gap: clamp(20px, vw(84), 84px);
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__list {
-    
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-big);
+    padding: clamp(16px, vw(24), 24px);
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--color-white);
+    gap: 1.6rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 8px;
+
+    a {
+      font-weight: var(--fw-700);
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
   }
 }

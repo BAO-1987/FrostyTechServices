@@ -6,15 +6,17 @@ h2,
 h3 {
   overflow: hidden;
   width: fit-content;
+  margin-bottom: 24px;
+  font-size: clamp(32px, 2rem + 1vi, 56px);
+  line-height: 1.22;
   font-weight: var(--fw-700);
-  // margin-bottom: 2.4rem;
-  font-size: clamp(32px, 1.8rem + 1vi, 48px);
-  line-height: 1.2;
   color: var(--color-black);
 }
 
-h2{
+h2 {
   margin-bottom: 2.4rem;
+  font-size: clamp(32px, 1.8rem + 1vi, 48px);
+  line-height: 1.2;
 }
 
 h3 {
