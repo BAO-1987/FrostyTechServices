@@ -3,7 +3,7 @@ import Swiper, {
   Pagination,
 } from 'swiper';
 
-const swiperTeam = new Swiper('.product__slider', {
+const swiperProduct = new Swiper('.product__slider', {
   slidesPerView: 1,
   spaceBetween: 20,
   modules: [Navigation, Pagination],

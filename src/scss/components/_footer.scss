@@ -41,8 +41,8 @@
 
   &__item {
     &:not(:last-child) {
-      white-space: nowrap;
       margin-right: clamp(16px, vw(24), 24px);
+      white-space: nowrap;
 
       @include media(mobile-m) {
         margin: 0 0 16px;

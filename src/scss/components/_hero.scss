@@ -27,6 +27,11 @@
       width: 60%;
       background: var(--gradient);
       inset: 0;
+
+      @include media(tablet) {
+        width: 100%;
+        opacity: 0.9;
+      }
     }
 
     @include media(tablet-wide) {
@@ -37,12 +42,6 @@
       padding: 20px;
     }
   }
-
-  // h1 {
-  //   margin-bottom: 24px;
-  //   font-size: clamp(32px, 2rem + 1vi, 56px);
-  //   line-height: 1.22;
-  // }
 
   p {
     margin-bottom: 1.6rem;

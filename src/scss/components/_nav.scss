@@ -58,11 +58,9 @@
   }
 
   &__link {
-    @include flex-all-center;
-
-    white-space: nowrap;
     font-size: 16px;
     line-height: 1.2;
+    white-space: nowrap;
     transition: color 0.3s linear;
 
     &:hover {
@@ -85,7 +83,6 @@
 
     @include media(tablet) {
       margin: 0 auto 20px !important;
-      border-color: var(--color-gray-900) !important;
     }
   }
 }

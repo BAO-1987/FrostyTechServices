@@ -3,10 +3,10 @@
 
 .choose {
   &__list {
-    margin-bottom: 2.4rem;
     counter-reset: li;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    margin-bottom: 2.4rem;
     gap: 24px;
 
     @include media(tablet-wide) {
@@ -19,13 +19,13 @@
   }
 
   &__item {
-    position: relative;
     counter-increment: li;
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 324px;
-    padding: clamp(16px, vw(24), 24px);
     border-radius: var(--radius-big);
+    padding: clamp(16px, vw(24), 24px);
+    min-height: 324px;
     background-color: var(--color-white);
 
     &::before {
@@ -43,6 +43,10 @@
       font-weight: var(--fw-600);
       font-size: 24px;
       line-height: 1.2;
+    }
+
+    @include media(mobile-l) {
+      min-height: 230px;
     }
   }
 

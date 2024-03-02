@@ -2,7 +2,6 @@
 @use "../utils/mixins/" as *;
 
 .single {
-
   h1 {
     margin-bottom: 48px;
     font-size: clamp(32px, 1.8rem + 1vi, 48px);
@@ -29,10 +28,10 @@
   }
 
   &__descr {
-    width: 100%;
-    max-width: 906px;
     border-radius: var(--radius-big);
     padding: clamp(16px, vw(48), 48px);
+    width: 100%;
+    max-width: 906px;
     background-color: var(--color-white);
   }
 

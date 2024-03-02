@@ -7,7 +7,7 @@
   z-index: 10;
   padding: clamp(5px, vw(24), 24px) 0 clamp(5px, vw(30), 30px);
   width: 100%;
-  transition-property: transform, padding, background-color;
+  transition-property: transform, background-color;
   transition-duration: 0.15s;
 
   &__inner {
@@ -26,7 +26,6 @@
   }
 
   &.scroll {
-    // padding: 10px 0;
     background-color: var(--color-gray-100);
   }
 }

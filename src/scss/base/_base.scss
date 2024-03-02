@@ -52,8 +52,8 @@ section {
 }
 
 .background {
-  padding: clamp(20px, vw(64), 64px);
   border-radius: var(--radius-big);
+  padding: clamp(20px, vw(64), 64px);
   background-color: var(--color-gray-100);
 }
 
@@ -116,4 +116,3 @@ section {
     visibility: visible;
   }
 }
-
