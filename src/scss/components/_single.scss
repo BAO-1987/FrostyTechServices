@@ -2,6 +2,7 @@
 @use "../utils/mixins/" as *;
 
 .single {
+
   h1 {
     margin-bottom: 48px;
     font-size: clamp(32px, 1.8rem + 1vi, 48px);
@@ -42,9 +43,12 @@
   }
 
   &__item {
-    h3 {
+    h3,
+    span {
       margin-bottom: 0;
+      font-weight: var(--fw-700);
       font-size: clamp(16px, 15.2px + 0.25vi, 20px);
+      color: var(--color-blue-900);
       opacity: 0.8;
     }
   }

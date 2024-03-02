@@ -49,4 +49,12 @@
       }
     }
   }
+
+  &__link {
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: var(--color-blue-400);
+    }
+  }
 }
