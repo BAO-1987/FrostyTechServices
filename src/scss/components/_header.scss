@@ -3,9 +3,8 @@
 
 .header {
   position: fixed;
-  top: 0;
+  top: 24px;
   z-index: 10;
-  padding: clamp(5px, vw(24), 24px) 0 clamp(5px, vw(30), 30px);
   width: 100%;
   transition-property: transform, background-color;
   transition-duration: 0.15s;
@@ -14,18 +13,23 @@
     border-radius: var(--radius-big);
     padding-left: clamp(16px, vw(64), 64px);
     background-color: var(--color-gray-100);
+    transition-property: box-shadow, background-color;
+    transition-duration: 0.15s;
 
     @include media(tablet) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 12px;
+      padding-bottom: 12px;
     }
   }
 
   &.hide {
-    transform: translateY(-100%);
+    transform: translateY(-200%);
   }
 
   &.scroll {
-    background-color: var(--color-gray-100);
+    .header__inner {
+      box-shadow: 0 0 8px 0 var(--color-gray-100);
+      background-color: var(--color-white);
+    }
   }
 }

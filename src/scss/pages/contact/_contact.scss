@@ -2,8 +2,6 @@
 @use "../../utils/mixins/" as *;
 
 .contact {
-  font-size: clamp(16px, 0.975rem + 0.125vi, 18px);
-
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -21,12 +19,13 @@
     border-radius: var(--radius-big);
     padding: clamp(16px, vw(24), 24px);
     background-color: var(--color-white);
-    gap: 24px;
+    gap: 36px;
   }
 
   &__link {
     display: flex;
     align-items: center;
+    font-size: clamp(14px, 0.6964rem + 0.8929vi, 24px);
     gap: clamp(10px, vw(24), 24px);
 
     &::before {

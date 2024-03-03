@@ -5,22 +5,22 @@ h1,
 h2,
 h3 {
   overflow: hidden;
-  width: fit-content;
   margin-bottom: 24px;
-  font-size: clamp(32px, 2rem + 1vi, 56px);
-  line-height: 1.22;
+  width: fit-content;
   font-weight: var(--fw-700);
+  font-size: clamp(32px, 1.5rem + 2.2222vi, 56px);
+  line-height: 1.22;
   color: var(--color-black);
 }
 
 h2 {
   margin-bottom: 2.4rem;
-  font-size: clamp(32px, 1.8rem + 1vi, 48px);
+  font-size: clamp(32px, 1.5rem + 1.6667vi, 48px);
   line-height: 1.2;
 }
 
 h3 {
-  font-size: clamp(18px, 1.1215rem + 0.3155vi, 24px);
+  font-size: clamp(18px, 1rem + 0.5556vi, 24px);
 }
 
 p {

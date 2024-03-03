@@ -12,12 +12,17 @@ body {
   font-family: var(--font-family-primary);
   font-weight: var(--fw-500);
   font-style: normal;
-  font-size: clamp(16px, 15.2px + 0.25vi, 20px);
+  font-size: clamp(16px, 0.9167rem + 0.3704vi, 20px);
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--color-blue-900);
   background-color: var(--color-white);
   font-optical-sizing: auto;
+  --radius-big: calc((var(--radius-main) * 2));
+
+  @include media(mobile-l) {
+    --radius-big: 16px;
+  }
 
   &__body {
     min-width: 320px;
@@ -26,6 +31,9 @@ body {
 
   &.open {
     overflow: hidden;
+    .header__inner {
+      background-color: var(--color-white);
+    }
   }
 }
 
@@ -48,12 +56,12 @@ section {
 }
 
 .main {
-  padding-top: calc(var(--header-height) + 4px);
+  padding-top: calc(var(--header-height) + 54px);
 }
 
 .background {
   border-radius: var(--radius-big);
-  padding: clamp(20px, vw(64), 64px);
+  padding: clamp(16px, vw(64), 64px);
   background-color: var(--color-gray-100);
 }
 
@@ -116,18 +124,3 @@ section {
 //     visibility: visible;
 //   }
 // }
-
-.formsapp-iframe.fullscreen {
-  min-height: var(--vh);
-  margin: auto;
-  opacity: 0;
-  visibility: hidden;
-
-  &.is-open {
-   opacity: 1;
-   visibility: visible;
-    z-index: 99;
-    margin: auto;
-    inset: 0;
-  }
-}

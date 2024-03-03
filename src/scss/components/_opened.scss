@@ -1,11 +1,12 @@
 /* stylelint-disable no-unknown-animations */
-@use "../utils/functions/"as*;
-@use "../utils/mixins/"as*;
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
 
 .opened {
   .nav__inner {
     transform: translateX(0);
   }
+
 
   span {
     background-color: rgba(0, 0, 0, 0);

@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: auto;
-      padding-top: calc(var(--header-height) * 1.5);
+      padding-top: calc(var(--header-height) * 2);
       width: 100%;
       height: calc(var(--vh));
       background-color: var(--color-white);
@@ -78,11 +78,16 @@
     }
   }
 
-  .btn--sign {
-    margin-right: 8px;
+  .btn--reverse {
+    margin-right: 8px !important;
 
     @include media(tablet) {
       margin: 0 auto 20px !important;
+      background-color: var(--color-white) !important;
+
+      &:hover {
+        background-color: var(--color-blue-900) !important;
+      }
     }
   }
 }

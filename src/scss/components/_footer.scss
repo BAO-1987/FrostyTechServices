@@ -21,7 +21,7 @@
     }
 
     @include media(mobile-m) {
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
@@ -35,7 +35,6 @@
 
     @include media(mobile-m) {
       flex-direction: column;
-      align-items: flex-start;
     }
   }
 
@@ -55,6 +54,13 @@
 
     &:hover {
       color: var(--color-blue-400);
+    }
+  }
+
+  &__copyright {
+    @include media(mobile-l) {
+      font-size: 14px;
+      text-align: center;
     }
   }
 }

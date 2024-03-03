@@ -60,16 +60,16 @@
       inset: 0;
     }
 
-    &::after {
-      content: "";
-      position: relative;
-      width: 30px;
-      height: 32px;
-      background-image: url("../images/icons/arrow-right.svg");
-      background-position: 0 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    // &::after {
+    //   content: "";
+    //   position: relative;
+    //   width: 30px;
+    //   height: 32px;
+    //   background-image: url("../images/icons/arrow-right.svg");
+    //   background-position: 0 0;
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    // }
   }
 
   h3 {

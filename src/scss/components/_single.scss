@@ -11,15 +11,6 @@
     line-height: 1.2;
   }
 
-  &__inner {
-    display: flex;
-    gap: 24px;
-
-    @include media(mobile-l) {
-      flex-direction: column;
-    }
-  }
-
   &__date {
     display: block;
     margin-bottom: 25px;
@@ -27,11 +18,9 @@
     opacity: 0.5;
   }
 
-  &__descr {
+  &__inner {
     border-radius: var(--radius-big);
     padding: clamp(16px, vw(48), 48px);
-    width: 100%;
-    max-width: 906px;
     background-color: var(--color-white);
   }
 
@@ -74,17 +63,10 @@
 
   h2 {
     margin-bottom: 24px;
-    font-size: clamp(20px, 1rem + 1.25vi, 40px);
+    font-size: clamp(20px, 1.2083rem + 1.2963vi, 38px);
 
     + p {
       margin-bottom: 24px;
-    }
-  }
-
-  &__aside {
-    h2 {
-      margin-bottom: 16px;
-      font-size: 24px;
     }
   }
 }

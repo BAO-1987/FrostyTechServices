@@ -117,11 +117,6 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
-*:focus-visible {
-  outline: max(2px, 0.1em) solid var(--color-orange);
-  border-radius: var(--radius-main);
-}
-
 button {
   margin: 0;
   border-color: #0000;
